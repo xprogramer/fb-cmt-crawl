@@ -23,6 +23,8 @@ To optimize the navigation, Facebook does not display all the post comments, whe
 
 To automate this process, I have written the **viewMoreComments** script. You copy the function code between **{ }** and paste it in the browser console. This script clicks only once on "**View more comments**", and if you need to execute it several times you must copy/paste the code more times (as you need) or put the code inside a loop with a delay between two consecutive iterations. **Note:** the delay is depending on the internet and the computer speed.
 
+![Browser console](https://github.com/xprogramer/fb-cmt-crawl/blob/main/console.png?raw=true "image description")
+
 For better readability, Facebook shows only a part of a long comment and display "**See more**" button. Before collecting the comment, we must display the entire comment. By running the script seeMore.js all the hidden parts of the long comments will be shown.
 
 ![See more](https://github.com/xprogramer/fb-cmt-crawl/blob/main/see%20more.jpg?raw=true "image description")
