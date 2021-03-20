@@ -10,9 +10,18 @@
 function cmt_crawl() {	
 	var filename;
 	// extract the post ID to use it as a filename
-	var _url = window.location.pathname.split("/");
-	if(_url[_url.length-1] == "") filename = _url[_url.length-2];
-	else filename = _url[_url.length-1];
+	var _url = window.location.href;
+	// link of a live video
+	if(_url.includes("watch/live")) {
+		_url = _url.split("v=");
+		filename = _url[1].split("&")[0];
+	}
+	// other links
+	else {
+		_url = window.location.pathname.split("/");
+		if(_url[_url.length-1] == "") filename = _url[_url.length-2];
+		else filename = _url[_url.length-1];
+	}
 	
 	// retrieve the post container
 	var post_message = document.getElementsByClassName("\
@@ -35,9 +44,9 @@ function cmt_crawl() {
 							)[0];
 	if(post_info == undefined) {
 		post_info = document.getElementsByClassName("\
-													sq6gx45u buofh1pr cbu4d94t \
-													j83agx80"
-													)[0];
+								sq6gx45u buofh1pr cbu4d94t \
+								j83agx80"
+								)[0];
 	}
 	
 	if(post_info == undefined) {
@@ -45,12 +54,31 @@ function cmt_crawl() {
 	}
 	// retreive the post reactions tab
 	var post_reactions = post_info.getElementsByClassName("\
+								l9j0dhe7 hpfvmrgz \
+								bkfpd7mw g5gj957u \
+								buofh1pr j83agx80"
+								)[0];
+	if(post_reactions == undefined) {
+		post_reactions = post_info.getElementsByClassName("\
 								l9j0dhe7"
 								)[0];
+	}
 	// retrieve the number of likes/reactions
 	var post_nb_likes = post_reactions.getElementsByClassName("\
 								gpro0wi8 pcp91wgn\
-								")[0].innerText;
+								")[0];
+	if(post_nb_likes == undefined) {
+		post_nb_likes = post_reactions.getElementsByClassName("\
+									gpro0wi8 cwj9ozl2 \
+									bzsjyuwj hcukyx3x \
+									ni8dbmo4 stjgntxs \
+									ltmttdrg g0qnabr5\
+									")[0].
+						firstChild.firstChild.innerText;
+	}
+	else {
+		post_nb_likes = post_nb_likes.innerText;
+	}
 	// retrieve the number of shares
 	var post_nb_shares = post_reactions.getElementsByClassName("\
 								d2edcug0 hpfvmrgz \
