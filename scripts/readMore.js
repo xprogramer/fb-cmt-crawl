@@ -1,23 +1,29 @@
 function readMore() {
 	// retrieve the post container
 	var post_message = document.getElementsByClassName("\
-														kvgmc6g5 cxmmr5t8 oygrvhab \
-														hcukyx3x c1et5uql ii04i59q"
-														)[0];
+								kvgmc6g5 cxmmr5t8 oygrvhab \
+								hcukyx3x c1et5uql ii04i59q"
+								)[0];
 	if(post_message == undefined) {
 		post_message = document.getElementsByClassName("\
-														kvgmc6g5 cxmmr5t8 oygrvhab \
-														hcukyx3x c1et5uql"
-														)[0].innerHTML;
+								kvgmc6g5 cxmmr5t8 oygrvhab \
+								hcukyx3x c1et5uql"
+								)[0].innerHTML;
 	}
 	else {
 		post_message = post_message.childNodes[0].innerHTML;
 	}
 	
 	var post_info = document.getElementsByClassName("\
-													stjgntxs ni8dbmo4 l82x9zwi \
-													uo3d90p7 h905i5nu monazrh9"
-													)[0];
+							stjgntxs ni8dbmo4 l82x9zwi \
+							uo3d90p7 h905i5nu monazrh9"
+							)[0];
+	if(post_info == undefined) {
+		post_info = document.getElementsByClassName("\
+								sq6gx45u buofh1pr cbu4d94t \
+								j83agx80"
+								)[0];
+	}
 	
 	if(post_info == undefined) {
 		post_info = document;
@@ -25,25 +31,25 @@ function readMore() {
 	
 	// get the comments container
 	// if the container has several classes 'cwj9ozl2 j83agx80 
-	//										 cbu4d94t buofh1pr 
-	//										 ni8dbmo4 stjgntxs 
-	//										 du4w35lb'
+	//					 cbu4d94t buofh1pr 
+	//					 ni8dbmo4 stjgntxs 
+	//					 du4w35lb'
 	var	post_comments = document.getElementsByClassName("\
-														cwj9ozl2 j83agx80 cbu4d94t \
-														buofh1pr ni8dbmo4 stjgntxs \
-														du4w35lb"
-														)[0];
+								cwj9ozl2 j83agx80 cbu4d94t \
+								buofh1pr ni8dbmo4 stjgntxs \
+								du4w35lb"
+								)[0];
 	// if the container has two classes 'cwj9ozl2 tvmbv18p'
 	if(post_comments == undefined) {
 		post_comments = post_info.getElementsByClassName("\
-														cwj9ozl2 tvmbv18p"
-														)[0];
+								cwj9ozl2 tvmbv18p"
+								)[0];
 	}
 	// if the container has only one class 'cwj9ozl2'
 	if(post_comments == undefined) {
 		post_comments = post_info.getElementsByClassName("\
-														cwj9ozl2"
-														)[1];
+								cwj9ozl2"
+								)[1];
 	}
 	// retrieve the list of comments enclosed in UL list
 	if(post_comments.getElementsByTagName("UL")[0].parentNode.tagName == "FORM") {
@@ -58,8 +64,8 @@ function readMore() {
 	for(var cmt=0; cmt<post_comments.length; cmt++){
 		// each comment is enclosed within a DIV element with a class value (_680y)
 		var user_comment = post_comments[cmt].getElementsByClassName("\
-																	_680y"
-																	)[0];
+										_680y"
+										)[0];
 		// if the post does not have comments
 		if(user_comment == undefined) {
 			break;
@@ -67,10 +73,10 @@ function readMore() {
 		var comment_node = user_comment.childNodes[0];
 		// exatract the comment text
 		var comment_text = comment_node.getElementsByClassName("\
-																kvgmc6g5 cxmmr5t8 \
-																oygrvhab hcukyx3x \
-																c1et5uql"
-																);
+									kvgmc6g5 cxmmr5t8 \
+									oygrvhab hcukyx3x \
+									c1et5uql"
+									);
 		if(comment_text.length > 0) {
 			// retrieve the "see more" button
 			if(comment_text[0].lastChild.lastChild.tagName == "DIV" &&
