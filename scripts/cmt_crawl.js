@@ -33,6 +33,12 @@ function cmt_crawl() {
 							stjgntxs ni8dbmo4 l82x9zwi \
 							uo3d90p7 h905i5nu monazrh9"
 							)[0];
+	if(post_info == undefined) {
+		post_info = document.getElementsByClassName("\
+													sq6gx45u buofh1pr cbu4d94t \
+													j83agx80"
+													)[0];
+	}
 	
 	if(post_info == undefined) {
 		post_info = document;
@@ -246,6 +252,8 @@ function cmt_crawl() {
 					+post_nb_likes
 					+'","post_nb_shares":"'
 					+post_nb_shares
+					+'","post_nb_comments":"'
+					+post_comments.length
 					+'","comments":['
 					+list_comments
 					+']}';
