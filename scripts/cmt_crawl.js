@@ -16,48 +16,48 @@ function cmt_crawl() {
 	
 	// retrieve the post container
 	var post_message = document.getElementsByClassName("\
-														kvgmc6g5 cxmmr5t8 oygrvhab \
-														hcukyx3x c1et5uql ii04i59q"
-														)[0];
+							kvgmc6g5 cxmmr5t8 oygrvhab \
+							hcukyx3x c1et5uql ii04i59q"
+							)[0];
 	if(post_message == undefined) {
 		post_message = document.getElementsByClassName("\
-														kvgmc6g5 cxmmr5t8 oygrvhab \
-														hcukyx3x c1et5uql"
-														)[0].innerHTML;
+								kvgmc6g5 cxmmr5t8 oygrvhab \
+								hcukyx3x c1et5uql"
+								)[0].innerHTML;
 	}
 	else {
 		post_message = post_message.childNodes[0].innerHTML;
 	}
 	
 	var post_info = document.getElementsByClassName("\
-													stjgntxs ni8dbmo4 l82x9zwi \
-													uo3d90p7 h905i5nu monazrh9"
-													)[0];
+							stjgntxs ni8dbmo4 l82x9zwi \
+							uo3d90p7 h905i5nu monazrh9"
+							)[0];
 	
 	if(post_info == undefined) {
 		post_info = document;
 	}
 	// retreive the post reactions tab
 	var post_reactions = post_info.getElementsByClassName("\
-															l9j0dhe7"
-															)[0];
+								l9j0dhe7"
+								)[0];
 	// retrieve the number of likes/reactions
 	var post_nb_likes = post_reactions.getElementsByClassName("\
-																gpro0wi8 pcp91wgn\
-																")[0].innerText;
+								gpro0wi8 pcp91wgn\
+								")[0].innerText;
 	// retrieve the number of shares
 	var post_nb_shares = post_reactions.getElementsByClassName("\
-																d2edcug0 hpfvmrgz \
-																qv66sw1b c1et5uql \
-																oi732d6d ik7dh3pa \
-																fgxwclzu a8c37x1j \
-																keod5gw0 nxhoafnm \
-																aigsh9s9 d9wwppkn \
-																fe6kdd0r mau55g9w \
-																c8b282yb iv3no6db \
-																jq4qci2q a3bd9o3v \
-																knj5qynh m9osqain"
-																);
+								d2edcug0 hpfvmrgz \
+								qv66sw1b c1et5uql \
+								oi732d6d ik7dh3pa \
+								fgxwclzu a8c37x1j \
+								keod5gw0 nxhoafnm \
+								aigsh9s9 d9wwppkn \
+								fe6kdd0r mau55g9w \
+								c8b282yb iv3no6db \
+								jq4qci2q a3bd9o3v \
+								knj5qynh m9osqain"
+								);
 	// get the number of shares and remove the word "shares" (keep only the number)
 	if(post_nb_shares.length > 1)
 		post_nb_shares = (post_nb_shares[1].innerText).split(' ')[0];
@@ -66,25 +66,25 @@ function cmt_crawl() {
 	
 	// get the comments container
 	// if the container has a class list 'cwj9ozl2 j83agx80 
-	//									  cbu4d94t buofh1pr 
-	//									  ni8dbmo4 stjgntxs 
-	//									  du4w35lb'
+	//				      cbu4d94t buofh1pr 
+	//				      ni8dbmo4 stjgntxs 
+	//				      du4w35lb'
 	var	post_comments = document.getElementsByClassName("\
-														cwj9ozl2 j83agx80 cbu4d94t \
-														buofh1pr ni8dbmo4 stjgntxs \
-														du4w35lb"
-														)[0];
+								cwj9ozl2 j83agx80 cbu4d94t \
+								buofh1pr ni8dbmo4 stjgntxs \
+								du4w35lb"
+								)[0];
 	// if the container has two classes 'cwj9ozl2 tvmbv18p'
 	if(post_comments == undefined) {
 		post_comments = post_info.getElementsByClassName("\
-														cwj9ozl2 tvmbv18p"
-														)[0];
+								cwj9ozl2 tvmbv18p"
+								)[0];
 	}
 	// if the container has only one class 'cwj9ozl2'
 	if(post_comments == undefined) {
 		post_comments = post_info.getElementsByClassName("\
-														cwj9ozl2"
-														)[1];
+								cwj9ozl2"
+								)[1];
 	}
 	// retrieve the list of comments enclosed in UL list
 	if(post_comments.getElementsByTagName("UL")[0].parentNode.tagName == "FORM") {
@@ -99,8 +99,8 @@ function cmt_crawl() {
 	for(var cmt=0; cmt<post_comments.length; cmt++){
 		// each comment is enclosed within a DIV element with a class value (_680y)
 		var user_comment = post_comments[cmt].getElementsByClassName("\
-																	_680y"
-																	)[0];
+										_680y"
+										)[0];
 		// if the post does not have comments
 		if(user_comment == undefined) {
 			break;
@@ -108,10 +108,10 @@ function cmt_crawl() {
 		var comment_node = user_comment.childNodes[0];
 		// exatract the comment text
 		var comment_text = comment_node.getElementsByClassName("\
-																kvgmc6g5 cxmmr5t8 \
-																oygrvhab hcukyx3x \
-																c1et5uql"
-																);
+									kvgmc6g5 cxmmr5t8 \
+									oygrvhab hcukyx3x \
+									c1et5uql"
+									);
 		if(comment_text.length > 0) {
 			// create a temporary element to keep the plan text after preprocessing
 			var div = document.createElement("div");
@@ -143,15 +143,20 @@ function cmt_crawl() {
 		
 			// extract the user profile link
 			var user_profile = comment_node.getElementsByClassName("\
-														oajrlxb2 g5ia77u1 qu0x051f \
-														esr5mh6w e9989ue4 r7d6kgcz \
-														rq0escxv nhd2j8a9 nc684nl6 \
-														p7hjln8o kvgmc6g5 cxmmr5t8 \
-														oygrvhab hcukyx3x jb3vyjys \
-														rz4wbd8a qt6c0cv9 a8nywdso \
-														i1ao9s8h esuyzwwr f1sip0of \
-														lzcic4wl gmql0nx0 gpro0wi8"
-														)[0];
+										oajrlxb2 g5ia77u1 qu0x051f \
+										esr5mh6w e9989ue4 r7d6kgcz \
+										rq0escxv nhd2j8a9 nc684nl6 \
+										p7hjln8o kvgmc6g5 cxmmr5t8 \
+										oygrvhab hcukyx3x jb3vyjys \
+										rz4wbd8a qt6c0cv9 a8nywdso \
+										i1ao9s8h esuyzwwr f1sip0of \
+										lzcic4wl gmql0nx0 gpro0wi8"
+										);
+			// if "Top fan" is retrieved
+			if(user_profile[0].tagName == "DIV") user_profile = user_profile[1];
+			// if the "user name" is retrieved
+			else if(user_profile[0].tagName == "A") user_profile = user_profile[0];
+			
 			user_profile =user_profile.href.split("comment_id")[0]; // page
 			user_profile =user_profile.split("__cft__[0]")[0]; //group
 			
@@ -160,26 +165,26 @@ function cmt_crawl() {
 										firstChild.innerHTML;
 			// extract the number of replies
 			var nb_replies = post_comments[cmt].getElementsByClassName("d2edcug0 \
-																		hpfvmrgz \
-																		qv66sw1b \
-																		c1et5uql \
-																		oi732d6d \
-																		ik7dh3pa \
-																		fgxwclzu \
-																		a8c37x1j \
-																		keod5gw0 \
-																		nxhoafnm \
-																		aigsh9s9 \
-																		d9wwppkn \
-																		fe6kdd0r \
-																		mau55g9w \
-																		c8b282yb \
-																		iv3no6db \
-																		jq4qci2q \
-																		a3bd9o3v \
-																		lrazzd5p \
-																		m9osqain"
-																		);
+										hpfvmrgz \
+										qv66sw1b \
+										c1et5uql \
+										oi732d6d \
+										ik7dh3pa \
+										fgxwclzu \
+										a8c37x1j \
+										keod5gw0 \
+										nxhoafnm \
+										aigsh9s9 \
+										d9wwppkn \
+										fe6kdd0r \
+										mau55g9w \
+										c8b282yb \
+										iv3no6db \
+										jq4qci2q \
+										a3bd9o3v \
+										lrazzd5p \
+										m9osqain"
+										);
 			if(nb_replies.length == 0)
 				nb_replies = '0';
 			else
@@ -188,20 +193,20 @@ function cmt_crawl() {
 			// retrieve the comment date
 			var comment_date = post_comments[cmt].getElementsByTagName("UL")[0].
 											getElementsByClassName("\
-																	oajrlxb2 g5ia77u1 \
-																	qu0x051f esr5mh6w \
-																	e9989ue4 r7d6kgcz \
-																	rq0escxv nhd2j8a9 \
-																	nc684nl6 p7hjln8o \
-																	kvgmc6g5 cxmmr5t8 \
-																	oygrvhab hcukyx3x \
-																	jb3vyjys rz4wbd8a \
-																	qt6c0cv9 a8nywdso \
-																	i1ao9s8h esuyzwwr \
-																	f1sip0of lzcic4wl \
-																	m9osqain gpro0wi8 \
-																	knj5qynh"
-																	)[0].
+												oajrlxb2 g5ia77u1 \
+												qu0x051f esr5mh6w \
+												e9989ue4 r7d6kgcz \
+												rq0escxv nhd2j8a9 \
+												nc684nl6 p7hjln8o \
+												kvgmc6g5 cxmmr5t8 \
+												oygrvhab hcukyx3x \
+												jb3vyjys rz4wbd8a \
+												qt6c0cv9 a8nywdso \
+												i1ao9s8h esuyzwwr \
+												f1sip0of lzcic4wl \
+												m9osqain gpro0wi8 \
+												knj5qynh"
+												)[0].
 											firstChild.innerText;
 			// retrieve the number of reactions
 			var nb_reactions = 0;
@@ -209,12 +214,12 @@ function cmt_crawl() {
 				var react_node = user_comment.childNodes[1];
 				// number of reactions
 				var nb_reactions = react_node.getElementsByClassName("\
-																m9osqain e9vueds3 \
-																knj5qynh j5wam9gi \
-																jb3vyjys n8tt0mok \
-																qt6c0cv9 hyh9befq \
-																g0qnabr5"
-																)[0].innerText;
+											m9osqain e9vueds3 \
+											knj5qynh j5wam9gi \
+											jb3vyjys n8tt0mok \
+											qt6c0cv9 hyh9befq \
+											g0qnabr5"
+											)[0].innerText;
 			}
 			// format the comment information as JSON
 			if(cmt > 0) list_comments += ',';
